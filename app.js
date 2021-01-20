@@ -5,6 +5,7 @@ const port = 3030
 const indexRouter = require('./routes/indexRoutes')
 const autosRouter = require('./routes/autosRoutes')
 const sucursalesRouter = require('./routes/sucursalesRoutes')
+const adminRoutes = require('./routes/adminRoutes')
 
 /* Configuraciones */
 
@@ -19,6 +20,7 @@ app.use(express.static(__dirname + '/public')); //configuro los recursos estatic
 app.use('/',indexRouter);
 app.use('/autos', autosRouter);
 app.use('/sucursales', sucursalesRouter);
+app.use('/admin', adminRoutes)
 
 /* Puerto */
 

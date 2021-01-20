@@ -17,7 +17,15 @@ module.exports={
             auto
         })
     },
-    agregar:(req,res) =>{
-        res.render('agregar')
+    search:(req,res) =>{
+        const buscar = req.query.buscar;
+
+        const resultado = autos.filter(auto => {
+            return auto.modelo.includes(buscar)
+        })
+        res.render('autos',{
+            title: "Resultado de la busqueda",
+            autos : resultado
+        })
     }
 }
